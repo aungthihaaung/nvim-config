@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
     })
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
+    use('nvim-treesitter/playground')
     -- use('theprimeagen/harpoon')
 
     use 'b3nj5m1n/kommentary'
@@ -70,7 +71,7 @@ return require('packer').startup(function(use)
 
     use('mg979/vim-visual-multi')
 
-    use('preservim/nerdtree')
+    -- use('preservim/nerdtree')
 
     use('github/copilot.vim')
 
@@ -98,6 +99,18 @@ return require('packer').startup(function(use)
     use {'prettier/vim-prettier', run = 'yarn install' }
 
     use('bkad/camelcasemotion')
+
+    -- Auto tag
+    use ("windwp/nvim-ts-autotag")
+
+    -- use ('manzeloth/live-server')
+
+    -- use("bastibe/lunatic-python")
+    --
+
+    use { "akinsho/toggleterm.nvim" }
+
+    use('kdheepak/lazygit.nvim')
 
 end)
 

@@ -56,7 +56,12 @@ vim.keymap.set("n", "gP", "P")
 -- select all
 vim.keymap.set("n", "<C-a>", "<esc>ggVG<CR>")
 
-
 -- cursor position after yanking
 vim.keymap.set("x", "y", "ygv<esc>")
 
+-- nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+-- vim.keymap.set("n", "<C-\\>", function() vim.cmd("ToggleTerm direction=float") end)
+
+-- split pane left right navigation
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
