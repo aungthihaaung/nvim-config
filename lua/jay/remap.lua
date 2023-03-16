@@ -65,3 +65,14 @@ vim.keymap.set("x", "y", "ygv<esc>")
 -- split pane left right navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+-- debug
+vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>")
+vim.keymap.set("n", "dt", ":lua require'dap'.toggle_breakpoint()<CR>")
+vim.keymap.set("n", "dc", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint cond: '))<CR>")
+vim.keymap.set("n", "<F10>", ":lua require'dap'.step_over()<CR>")
+vim.keymap.set("n", "<F11>", ":lua require'dap'.step_into()<CR>")
+vim.keymap.set("n", "<F12>", ":lua require'dap'.step_out()<CR>")
+
+-- debug go test
+-- vim.keymap.set("n", "dgt", ":lua require'dap-go'.debug_test()<CR>")

@@ -7,6 +7,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    use "nvim-lua/plenary.nvim"
+
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
@@ -95,6 +97,36 @@ return require('packer').startup(function(use)
     -- use("lukas-reineke/indent-blankline.nvim")
 
     use('mfussenegger/nvim-dap')
+    use('leoluz/nvim-dap-go')
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
+    --[[ use {
+      "microsoft/vscode-js-debug",
+      opt = true,
+      run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out" 
+    } ]]
+    use('theHamsta/nvim-dap-virtual-text')
+    use('nvim-telescope/telescope-dap.nvim')
+
+
+    --[[ use {
+      "mfussenegger/nvim-dap",
+      opt = true,
+      event = "BufReadPre",
+      module = { "dap" },
+      wants = { "nvim-dap-virtual-text", "DAPInstall.nvim", "nvim-dap-ui", "nvim-dap-python" },
+      requires = {
+        "Pocco81/DAPInstall.nvim",
+        "theHamsta/nvim-dap-virtual-text",
+        "rcarriga/nvim-dap-ui",
+        "mfussenegger/nvim-dap-python",
+        "nvim-telescope/telescope-dap.nvim",
+        { "leoluz/nvim-dap-go", module = "dap-go" },
+      },
+      config = function()
+        require("config.dap").setup()
+      end,
+    } ]]
 
     use {'prettier/vim-prettier', run = 'yarn install' }
 
@@ -111,6 +143,7 @@ return require('packer').startup(function(use)
     use { "akinsho/toggleterm.nvim" }
 
     use('kdheepak/lazygit.nvim')
+
 
 end)
 
