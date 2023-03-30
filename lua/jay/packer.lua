@@ -94,8 +94,9 @@ return require('packer').startup(function(use)
         end,
     })
 
-    -- use("lukas-reineke/indent-blankline.nvim")
+    use("lukas-reineke/indent-blankline.nvim")
 
+    -- dap debug
     use('mfussenegger/nvim-dap')
     use('leoluz/nvim-dap-go')
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
@@ -107,6 +108,8 @@ return require('packer').startup(function(use)
     } ]]
     use('theHamsta/nvim-dap-virtual-text')
     use('nvim-telescope/telescope-dap.nvim')
+    use ('simrat39/rust-tools.nvim')
+    use('rust-lang/rust.vim')
 
 
     --[[ use {
@@ -144,6 +147,11 @@ return require('packer').startup(function(use)
 
     use('kdheepak/lazygit.nvim')
 
+    -- db
+    --[[ use('tpope/vim-dadbod')
+    use('kristijanhusak/vim-dadbod-ui')
+    use('kristijanhusak/vim-dadbod-completion') ]]
+    -- sqlserver://Server=localhost;Database=cpf_fmc;User Id=sa;Password=r3d56kar;
 
 end)
 

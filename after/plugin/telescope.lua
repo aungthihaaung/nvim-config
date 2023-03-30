@@ -26,6 +26,8 @@ vim.keymap.set('n', '<A-S-F>', builtin.live_grep, {remap=true})
 -- vim.keymap.set('n', '<A-S-O>', builtin.lsp_document_symbols, {})
 vim.keymap.set('n', '<A-S-O>', builtin.lsp_dynamic_workspace_symbols, {})
 
+vim.keymap.set('n', '<S-A-F12>', builtin.lsp_references, {})
+
 --[[ local telescope = require("telescope")
 telescope.setup({
 	defaults = {

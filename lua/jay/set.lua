@@ -3,9 +3,9 @@ vim.opt.relativenumber = true
 vim.opt.ignorecase = true
 -- vim.g.smartcase = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
@@ -57,3 +57,21 @@ for option, value in pairs(powershell_options) do
     vim.opt[option] = value
 end
 
+-- show full path at airline
+vim.g.airline_section_c = '%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
+-- vim.opt.titlestring='%{expand(\"%:p:h\")}'
+
+-- vim.g.db_adapter_sqlserver = 'sqlserver://Server=localhost;Database=cpf_fmc;User Id=sa;Password=r3d56kar;'
+
+--[[ vim.g:dbs = {
+    'dev': 'postgres://postgres:mypassword@localhost:5432/my-dev-db',
+    'staging': 'postgres://postgres:mypassword@localhost:5432/my-staging-db',
+    'wp': 'mysql://root@localhost/wp_awesome',
+} ]]
+
+-- db
+--local api = vim.api
+-- api.nvim_create_autocmd(
+--  "FileType",
+--  { pattern = { "sql" }, command = [[lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })]] }
+-- )

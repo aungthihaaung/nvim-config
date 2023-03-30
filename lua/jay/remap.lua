@@ -44,7 +44,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "G", "Gzzzv")
 
 -- prettier
-vim.keymap.set("n", "<leader>p", ":Prettier<CR>")
+vim.keymap.set("n", "<leader>p", ":PrettierAsync<CR>")
 
 
 -- cursor position after pasting
@@ -68,6 +68,7 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- debug
 vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>")
+vim.keymap.set("n", "<F6>", ":lua require'dap'.terminate()<CR>")
 vim.keymap.set("n", "dt", ":lua require'dap'.toggle_breakpoint()<CR>")
 vim.keymap.set("n", "dc", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint cond: '))<CR>")
 vim.keymap.set("n", "<F10>", ":lua require'dap'.step_over()<CR>")
