@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "javascript", "typescript", "c", "lua", "vim", "help", "query", "rust" },
+  -- ensure_installed = { "javascript", "typescript", "c", "lua", "vim", "help", "query", "rust" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -18,8 +18,12 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     enable = true,
+    -- https://www.reddit.com/r/neovim/comments/n9aupn/set_spell_that_only_considers_code_comments/
+    -- additional_vim_regex_highlighting = false,
+    -- disable = { "sql", "yaml", "javascript", "typescript" },
+    disable = { "sql", "yaml" },
 
-    disable = { "sql" },
+    additional_vim_regex_highlighting = false,
 
     -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
@@ -39,6 +43,14 @@ require'nvim-treesitter.configs'.setup {
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
   },
+  indent = { enable=true, disable={"yaml"} },
+  --[[ rainbow = {
+    enable = true,
+    disable = { 'jsx', 'cpp' },
+    query = 'rainbow-parens',
+    strategy = require('ts-rainbow').strategy.global,
+  } ]]
 }
+
+

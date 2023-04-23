@@ -24,6 +24,8 @@ require("dap-vscode-js").setup({
   -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
 })
 
+require('dap.ext.vscode').load_launchjs(nil, {})
+
 for _, language in ipairs { "typescript", "javascript" } do
     require("dap").configurations[language] = {
       {
@@ -43,6 +45,34 @@ for _, language in ipairs { "typescript", "javascript" } do
           NODE_ENV = "development",
           RUNTIME = "dev",
         },
+        skipFiles = {"<node_internals>/**", "node_modules/**"}
+      },
+      {
+        type = "pwa-node",
+        request = "launch",
+        name = "nr deva",
+        runtimeExecutable = "C:\\Program Files\\nodejs\\npm.cmd",
+        runtimeArgs = {
+          "run-script",
+          "deva",
+          "--",
+          "--inspect-brk=9229"
+        },
+        cwd = "${workspaceFolder}",
+        skipFiles = {"<node_internals>/**", "node_modules/**"}
+      },
+      {
+        type = "pwa-node",
+        request = "launch",
+        name = "nr devn",
+        runtimeExecutable = "C:\\Program Files\\nodejs\\npm.cmd",
+        runtimeArgs = {
+          "run-script",
+          "devn",
+          "--",
+          "--inspect-brk=9229"
+        },
+        cwd = "${workspaceFolder}",
         skipFiles = {"<node_internals>/**", "node_modules/**"}
       },
       {

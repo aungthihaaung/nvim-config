@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     })
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
-    use('nvim-treesitter/playground')
+    -- use('nvim-treesitter/playground')
     -- use('theprimeagen/harpoon')
 
     use 'b3nj5m1n/kommentary'
@@ -148,10 +148,39 @@ return require('packer').startup(function(use)
     use('kdheepak/lazygit.nvim')
 
     -- db
-    --[[ use('tpope/vim-dadbod')
+    use('tpope/vim-dadbod')
     use('kristijanhusak/vim-dadbod-ui')
-    use('kristijanhusak/vim-dadbod-completion') ]]
+    use('kristijanhusak/vim-dadbod-completion')
+    -- use('HiPhish/nvim-ts-rainbow2')
     -- sqlserver://Server=localhost;Database=cpf_fmc;User Id=sa;Password=r3d56kar;
+    -- DB sqlserver://Server=localhost;Database=smrt;User Id=sa;Password=r3d56kar;
+    -- sqlserver://Server=localhost;Database=smrt;User Id=sa;Password=r3d56kar;
 
+    --[[ use {
+      'lewis6991/spellsitter.nvim',
+      config = function()
+        require('spellsitter').setup()
+      end
+    } ]]
+
+    -- use('kamykn/spelunker.vim')
+    -- use('shinglyu/vim-codespell')
+    -- use {'psliwka/vim-dirtytalk', run = ':DirtytalkUpdate'}
+    use {
+      'chipsenkbeil/distant.nvim',
+      branch = 'v0.2',
+      config = function()
+        require('distant').setup {
+          -- Applies Chip's personal settings to every machine you connect to
+          --
+          -- 1. Ensures that distant servers terminate with no connections
+          -- 2. Provides navigation bindings for remote directories
+          -- 3. Provides keybinding to jump into a remote file's parent directory
+          ['*'] = require('distant.settings').chip_default()
+        }
+      end
+    }
 end)
+
+
 
